@@ -424,7 +424,7 @@ typedef void (^MBProgressHUDCompletionBlock)();
 /**
  * A progress view for showing definite progress by filling up a circle (pie chart).
  */
-@interface MBRoundProgressView : UIView 
+@interface TVMBRoundProgressView : UIView 
 
 /**
  * Progress (0.0 to 1.0)

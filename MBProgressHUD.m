@@ -448,7 +448,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 - (void)updateIndicators {
 	
 	BOOL isActivityIndicator = [indicator isKindOfClass:[UIActivityIndicatorView class]];
-	BOOL isRoundIndicator = [indicator isKindOfClass:[MBRoundProgressView class]];
+	BOOL isRoundIndicator = [indicator isKindOfClass:[TVMBRoundProgressView class]];
 	
 	if (mode == MBProgressHUDModeIndeterminate &&  !isActivityIndicator) {
 		// Update to indeterminate indicator
@@ -462,11 +462,11 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		if (!isRoundIndicator) {
 			// Update to determinante indicator
 			[indicator removeFromSuperview];
-			self.indicator = MB_AUTORELEASE([[MBRoundProgressView alloc] init]);
+			self.indicator = MB_AUTORELEASE([[TVMBRoundProgressView alloc] init]);
 			[self addSubview:indicator];
 		}
 		if (mode == MBProgressHUDModeAnnularDeterminate) {
-			[(MBRoundProgressView *)indicator setAnnular:YES];
+			[(TVMBRoundProgressView *)indicator setAnnular:YES];
 		}
 	} 
 	else if (mode == MBProgressHUDModeCustomView && customView != indicator) {
@@ -724,7 +724,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 @end
 
 
-@implementation MBRoundProgressView {
+@implementation TVMBRoundProgressView {
 	float _progress;
 	BOOL _annular;
 }
